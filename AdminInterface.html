@@ -1,0 +1,538 @@
+    <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+     /* General Styles */
+body {
+  background-color: #aeaeae;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.h {
+  height: 100%;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.profile-section img {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+}
+
+.profile-section div {
+  margin-left: 16px;
+}
+
+.profile-section h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-section p {
+  color: #000000;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-tabs a {
+  padding: 8px 16px;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 2px solid #000000;
+}
+
+.nav-tabs a:hover {
+  color: #000000;
+}
+
+.nav-tabs {
+  color: white;
+ 
+}
+
+.nav-tabs .border-bottom {
+  border-bottom: 1px solid #d1d5db;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+/* About Details */
+.about-details {
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px; /* Add space below this section */
+}
+
+.about-details h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.button {
+      background-color: #00ae2b;
+      color: white;
+      padding: 6px 23px;
+      margin-bottom: 5px;
+      margin-right: 50px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .research-section {
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.research-section h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.research-section .research-item {
+  background-color: #f3f4f6;  /* Light gray background */
+  padding: 12px 16px;
+  margin-bottom: 16px;         /* Space below each item */
+  font-size: 1rem;             /* Standard font size */
+}
+
+.research-section .research-item h3 {
+  font-weight: 600;
+}
+
+.research-section .research-item p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.research-section .research-item .authors {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+
+.research-section .research-item::-webkit-scrollbar {
+  display: none;               /* Hides the scrollbar in Webkit browsers */
+}
+
+
+.about-research-wrapper {
+  background-color: #e5e7eb; /* Light gray background */
+  padding: 16px; /* Adds padding inside the container */
+  width: 700px; /* Ensures it takes a specific width within its container */
+  max-width: 1000px; /* Ensures the wrapper doesn't exceed 1000px in width */
+  
+}
+
+.members-wrapper {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e5e7eb;
+  padding: 16px;
+  width: 400px;
+  height: 580px;
+  position: sticky;
+  top: 16px; /* Adjust based on how far you want it to stay from the top */
+  bottom: 16px;
+  align-self: flex-start; /* Ensures it stays in place even when scrolling */
+}
+.member-card > *:not(.parag):not(.parag2) {
+  background-color: white;
+  padding: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 200px; /* Fixed height for scrollable container */
+      overflow-y: auto; /* Enable vertical scrolling */
+}
+.parag, .parag2 {
+    background-color: white;
+    padding-bottom: 1px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-card h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.member-card .member-item {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+}
+
+.member-card .member-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+}
+
+.member-card .member-item p {
+  font-weight: 600;
+}
+
+.member-card .member-item .email {
+  color: #6b7280;
+  font-size: 0.875rem;
+} 
+
+@media (max-width: 1200px) {
+      .nav-tabs {
+        display: flex;
+        flex-direction: row;       /* Align horizontally */
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .button {
+        width: auto;
+        margin: 0;
+      }
+
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .members-wrapper {
+        width: 100%;
+      }
+
+      .about-research-wrapper {
+        width: 100%;
+        padding: 16px;
+      }
+
+      .member-card {
+        width: 100%;
+      }
+      .prof {
+        padding-top: 10px;
+      }
+      .profile-section {
+        align-items: flex-start;
+      }
+
+      .profile-section img {
+        margin-bottom: 16px;
+      }
+
+      .profile-section h1 {
+        font-size: 1.25rem;
+      }
+
+      .profile-section p {
+        font-size: 0.875rem;
+      }
+    }           
+
+    </style>
+    <title>Profile Page</title>
+  </head>
+  <body>
+
+    <div class="bg-white h">
+      <div class="max-w-5xl mx-auto p-4">
+        <div class="flex items-center space-x-2 text-gray-600 text-sm">
+          <a class="hover:underline" href="#">Home</a>
+          <span>/</span>
+          <span>Profile</span>
+        </div>
+
+        <div class="profile-section">
+          <img alt="Profile picture" src="https://placehold.co/100x100"/>
+          <div class="prof">
+            <h1 class="text-2xl font-semibold">Nancy S. Mozo</h1>
+            <p class="text-gray-500">Admin</p>
+            <p class="font-semibold">University of Southeastern Philippines</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <div class="nav-tabs">
+            <nav class="flex space-x-4">
+              
+              <a class="py-2 px-4 text-black border-b-2 border-black" href="#">Profile</a>
+              <a class="py-2 px-4 text-gray-500 hover:text-black" href="#">Research</a>
+            </nav>
+            <button class="button">Add Research</button>
+          </div>
+
+          <div class="border-b border-gray-300"></div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="content-wrapper">
+    <div class="about-research-wrapper">
+      
+      <!-- About Details -->
+      <div class="about-details">
+        <h2 class="text-lg font-semibold mb-4">About Details</h2>
+        <div class="border-t border-gray-300 pt-4">
+          <!-- Content goes here -->
+        </div>
+      </div>
+
+      <!-- Research Section -->
+      <!-- Research Section -->
+      
+          <div class="research-section">
+            <!-- Research Header -->
+            <div class="resparag">
+              <h2 class="text-lg font-semibold mb-4">Research</h2>
+            </div>
+            <div class="border-t border-gray-300 pt-4">
+              <!-- Scrollable Research Details -->
+              <div class="research-details-scrollable">
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold">Digital Transformation of LGUs in the Davao Region</h3>
+                  <p class="text-gray-500 text-sm">Study | March 2019</p>
+                  <div class="authors">
+                    <span>Cheryl R. Amante</span>
+                    <span>Vera Kim S. Tequin</span>
+                    <span>Michael V. Machica</span>
+                    <span>Ivy Kim D. Machica</span>
+                  </div>
+                </div>
+                <!-- Add more research items here -->
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+      <!-- Staff and Student Members -->
+      <div class="members-wrapper">
+
+        <!-- Staff Member -->
+<div class="member-card">
+  <div class="parag"><h2 class="text-lg font-semibold mb-4">Staff Member</h2></div>
+  
+  <div class="member-list border-t border-gray-300 pt-4 space-y-4">
+    <div class="member-item">
+      <img alt="Staff member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Marvin S. Lagmay</p>
+        <p class="email">mslagmay@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Staff member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Ivy Kim D. Machica</p>
+        <p class="email">kmachica@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Staff member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Tamara Cher R. Mercado</p>
+        <p class="email">tmercado@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Staff member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">John Doe</p>
+        <p class="email">jdoe@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Staff member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Jane Smith</p>
+        <p class="email">jsmith@usep.edu.ph</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student Member -->
+<div class="member-card">
+  <div class="parag2"><h2 class="text-lg font-semibold mb-4">Student Member</h2></div>
+  
+  <div class="member-list border-t border-gray-300 pt-4 space-y-4">
+    <div class="member-item">
+      <img alt="Student member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Alih D. Alegre</p>
+        <p class="email">adalegre@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Student member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Ivan Kier T. Pavo</p>
+        <p class="email">iktpavo@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Student member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Gabriel Pabillo</p>
+        <p class="email">gpabillo@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Student member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">Marlou Angelo Panungcat</p>
+        <p class="email">mpanungcat@usep.edu.ph</p>
+      </div>
+    </div>
+    <div class="member-item">
+      <img alt="Student member picture" src="https://placehold.co/50x50"/>
+      <div>
+        <p class="font-semibold">New Student Member</p>
+        <p class="email">newstudent@usep.edu.ph</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </body>
+  </html>
